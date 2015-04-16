@@ -30,7 +30,7 @@
                 </value>
                 <next>
                   <block type="oled_drawtext" id="588">
-                    <field name="TEXT">straightime</field>
+                    <field name="TEXT">straightime=</field>
                     <next>
                       <block type="oled_drawnumber" id="770" inline="true">
                         <value name="NUMBER">
