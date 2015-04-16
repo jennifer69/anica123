@@ -2,7 +2,7 @@
   <block type="oled_cleardisplay" id="26" x="389" y="24">
     <next>
       <block type="variables_set" id="28" inline="true">
-        <field name="VAR">i</field>
+        <field name="VAR">69i</field>
         <value name="VALUE">
           <block type="math_number" id="35">
             <field name="NUM">0</field>
@@ -24,7 +24,7 @@
                 </value>
                 <value name="STARTY">
                   <block type="variables_get" id="349">
-                    <field name="VAR">i</field>
+                    <field name="VAR">69i</field>
                   </block>
                 </value>
                 <next>
@@ -34,18 +34,18 @@
                       <block type="oled_drawnumber" id="272" inline="true">
                         <value name="NUMBER">
                           <block type="variables_get" id="359">
-                            <field name="VAR">i</field>
+                            <field name="VAR">69i</field>
                           </block>
                         </value>
                         <next>
                           <block type="variables_set" id="312" inline="true">
-                            <field name="VAR">i</field>
+                            <field name="VAR">69i</field>
                             <value name="VALUE">
                               <block type="math_arithmetic" id="319" inline="true">
                                 <field name="OP">ADD</field>
                                 <value name="A">
                                   <block type="variables_get" id="380">
-                                    <field name="VAR">i</field>
+                                    <field name="VAR">69i</field>
                                   </block>
                                 </value>
                                 <value name="B">
