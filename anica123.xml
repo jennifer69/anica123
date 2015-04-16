@@ -33,7 +33,7 @@
             </value>
             <next>
               <block type="multimedia_playwav" id="801">
-                <field name="WAV">idela is the shit</field>
+                <field name="WAV">_SndTest.w</field>
               </block>
             </next>
           </block>
