@@ -5,7 +5,7 @@
         <field name="VAR">i</field>
         <value name="VALUE">
           <block type="math_number" id="35">
-            <field name="NUM">69</field>
+            <field name="NUM">0</field>
           </block>
         </value>
         <next>
