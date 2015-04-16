@@ -1,60 +1,87 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_cleardisplay" id="26" x="389" y="24">
+  <block type="variables_set" id="479" inline="true" x="158" y="5">
+    <field name="VAR">straighttime</field>
+    <value name="VALUE">
+      <block type="math_number" id="486">
+        <field name="NUM">200</field>
+      </block>
+    </value>
     <next>
-      <block type="variables_set" id="28" inline="true">
-        <field name="VAR">i</field>
-        <value name="VALUE">
-          <block type="math_number" id="35">
-            <field name="NUM">0</field>
+      <block type="controls_whileUntil" id="501" inline="false">
+        <field name="MODE">UNTIL</field>
+        <value name="NUMBER">
+          <block type="sensor_button" id="552">
+            <field name="OBJECT">ENTER</field>
           </block>
         </value>
-        <next>
-          <block type="controls_repeat" id="42" inline="true">
-            <value name="TIMES">
-              <block type="math_number" id="82">
-                <field name="NUM">6</field>
-              </block>
-            </value>
-            <statement name="DO">
-              <block type="oled_setcursor" id="75" inline="true">
+        <statement name="DO">
+          <block type="oled_cleardisplay" id="561">
+            <next>
+              <block type="oled_setcursor" id="579" inline="true">
                 <value name="STARTX">
-                  <block type="math_number" id="89">
-                    <field name="NUM">69</field>
+                  <block type="math_number" id="723">
+                    <field name="NUM">0</field>
                   </block>
                 </value>
                 <value name="STARTY">
-                  <block type="variables_get" id="349">
-                    <field name="VAR">i</field>
+                  <block type="math_number" id="730">
+                    <field name="NUM">0</field>
                   </block>
                 </value>
                 <next>
-                  <block type="oled_drawtext" id="256">
-                    <field name="TEXT">i =</field>
+                  <block type="oled_drawtext" id="588">
+                    <field name="TEXT">straightime</field>
                     <next>
-                      <block type="oled_drawnumber" id="272" inline="true">
+                      <block type="oled_drawnumber" id="770" inline="true">
                         <value name="NUMBER">
-                          <block type="variables_get" id="359">
-                            <field name="VAR">i</field>
+                          <block type="variables_get" id="746">
+                            <field name="VAR">straighttime</field>
                           </block>
                         </value>
                         <next>
-                          <block type="variables_set" id="312" inline="true">
-                            <field name="VAR">i</field>
-                            <value name="VALUE">
-                              <block type="math_arithmetic" id="319" inline="true">
-                                <field name="OP">MULTIPLY</field>
-                                <value name="A">
-                                  <block type="variables_get" id="380">
-                                    <field name="VAR">i</field>
+                          <block type="movement_forward" id="615">
+                            <next>
+                              <block type="robot_delay" id="626" inline="true">
+                                <value name="DELAY">
+                                  <block type="variables_get" id="780">
+                                    <field name="VAR">straighttime</field>
                                   </block>
                                 </value>
-                                <value name="B">
-                                  <block type="math_number" id="394">
-                                    <field name="NUM">88</field>
+                                <next>
+                                  <block type="movement_right" id="636">
+                                    <next>
+                                      <block type="robot_delay" id="652" inline="true">
+                                        <value name="DELAY">
+                                          <block type="math_number" id="787">
+                                            <field name="NUM">1300</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set" id="674" inline="true">
+                                            <field name="VAR">straighttime</field>
+                                            <value name="VALUE">
+                                              <block type="math_arithmetic" id="694" inline="true">
+                                                <field name="OP">ADD</field>
+                                                <value name="A">
+                                                  <block type="variables_get" id="706">
+                                                    <field name="VAR">straighttime</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number" id="794">
+                                                    <field name="NUM">200</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
                                   </block>
-                                </value>
+                                </next>
                               </block>
-                            </value>
+                            </next>
                           </block>
                         </next>
                       </block>
@@ -62,8 +89,11 @@
                   </block>
                 </next>
               </block>
-            </statement>
+            </next>
           </block>
+        </statement>
+        <next>
+          <block type="movement_stop" id="716"></block>
         </next>
       </block>
     </next>
