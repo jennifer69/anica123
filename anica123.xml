@@ -1,101 +1,61 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="variables_set" id="479" inline="true" x="158" y="5">
+  <block type="controls_whileUntil" id="501" inline="false" x="128" y="29">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="844">
+        <field name="OBJECT">ENTER</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="controls_if" id="825" inline="false">
+        <value name="IF0">
+          <block type="logic_compare" id="869" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="851">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="876">
+                <field name="NUM">75</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="led_select" id="900" inline="true">
+            <field name="ACTION">FLASH</field>
+            <value name="LED">
+              <block type="math_number" id="926">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="multimedia_playwav" id="801">
+                <field name="WAV">idela is the shit</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="robot_delay" id="912" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="919">
+                <field name="NUM">150</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="variables_set" id="479" inline="true" x="643" y="425">
     <field name="VAR">straighttime</field>
     <value name="VALUE">
       <block type="math_number" id="486">
         <field name="NUM">200</field>
       </block>
     </value>
-    <next>
-      <block type="controls_whileUntil" id="501" inline="false">
-        <field name="MODE">UNTIL</field>
-        <value name="NUMBER">
-          <block type="sensor_button" id="552">
-            <field name="OBJECT">ENTER</field>
-          </block>
-        </value>
-        <statement name="DO">
-          <block type="oled_cleardisplay" id="561">
-            <next>
-              <block type="oled_setcursor" id="579" inline="true">
-                <value name="STARTX">
-                  <block type="math_number" id="723">
-                    <field name="NUM">0</field>
-                  </block>
-                </value>
-                <value name="STARTY">
-                  <block type="math_number" id="730">
-                    <field name="NUM">0</field>
-                  </block>
-                </value>
-                <next>
-                  <block type="oled_drawtext" id="588">
-                    <field name="TEXT">straightime=</field>
-                    <next>
-                      <block type="oled_drawnumber" id="770" inline="true">
-                        <value name="NUMBER">
-                          <block type="variables_get" id="746">
-                            <field name="VAR">straighttime</field>
-                          </block>
-                        </value>
-                        <next>
-                          <block type="movement_forward" id="615">
-                            <next>
-                              <block type="robot_delay" id="626" inline="true">
-                                <value name="DELAY">
-                                  <block type="variables_get" id="780">
-                                    <field name="VAR">straighttime</field>
-                                  </block>
-                                </value>
-                                <next>
-                                  <block type="movement_right" id="636">
-                                    <next>
-                                      <block type="robot_delay" id="652" inline="true">
-                                        <value name="DELAY">
-                                          <block type="math_number" id="787">
-                                            <field name="NUM">1300</field>
-                                          </block>
-                                        </value>
-                                        <next>
-                                          <block type="variables_set" id="674" inline="true">
-                                            <field name="VAR">straighttime</field>
-                                            <value name="VALUE">
-                                              <block type="math_arithmetic" id="694" inline="true">
-                                                <field name="OP">ADD</field>
-                                                <value name="A">
-                                                  <block type="variables_get" id="706">
-                                                    <field name="VAR">straighttime</field>
-                                                  </block>
-                                                </value>
-                                                <value name="B">
-                                                  <block type="math_number" id="794">
-                                                    <field name="NUM">200</field>
-                                                  </block>
-                                                </value>
-                                              </block>
-                                            </value>
-                                          </block>
-                                        </next>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </statement>
-        <next>
-          <block type="movement_stop" id="716"></block>
-        </next>
-      </block>
-    </next>
   </block>
 </xml>
