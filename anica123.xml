@@ -50,12 +50,4 @@
       </block>
     </statement>
   </block>
-  <block type="variables_set" id="479" inline="true" x="643" y="425">
-    <field name="VAR">straighttime</field>
-    <value name="VALUE">
-      <block type="math_number" id="486">
-        <field name="NUM">200</field>
-      </block>
-    </value>
-  </block>
 </xml>
