@@ -42,7 +42,7 @@
                             <field name="VAR">i</field>
                             <value name="VALUE">
                               <block type="math_arithmetic" id="319" inline="true">
-                                <field name="OP">MODULO</field>
+                                <field name="OP">MULTIPLY</field>
                                 <value name="A">
                                   <block type="variables_get" id="380">
                                     <field name="VAR">i</field>
